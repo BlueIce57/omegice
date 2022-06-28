@@ -4,8 +4,6 @@ import fr.litarvan.openauth.microsoft.MicrosoftAuthResult;
 import fr.litarvan.openauth.microsoft.MicrosoftAuthenticationException;
 import fr.litarvan.openauth.microsoft.MicrosoftAuthenticator;
 import java.io.File;
-import java.util.Arrays;
-
 import fr.theshark34.openlauncherlib.LaunchException;
 import fr.theshark34.openlauncherlib.external.ExternalLaunchProfile;
 import fr.theshark34.openlauncherlib.external.ExternalLauncher;
@@ -70,7 +68,6 @@ public class  Launcher {
 	public static void launch() throws LaunchException
 	{
 		ExternalLaunchProfile profile = MinecraftLauncher.createExternalProfile(OI_INFOS, GameFolder.BASIC, authInfos);
-		profile.getArgs().addAll(Arrays.asList("--server", "46.4.94.213", "--port", "60287"));
 		ExternalLauncher launcher = new ExternalLauncher(profile);
 		
 		Process p = launcher.launch();
