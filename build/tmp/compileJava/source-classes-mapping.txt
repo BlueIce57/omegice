@@ -10,12 +10,10 @@ fr/blueice/omegice/launcher/ui/panel/IMovable.java
  fr.blueice.omegice.launcher.ui.panel.IMovable
 fr/blueice/omegice/launcher/ui/panels/pages/content/ContentPanel.java
  fr.blueice.omegice.launcher.ui.panels.pages.content.ContentPanel
-fr/blueice/omegice/launcher/ui/panels/pages/content/Home.java
- fr.blueice.omegice.launcher.ui.panels.pages.content.Home
- fr.blueice.omegice.launcher.ui.panels.pages.content.Home$1
- fr.blueice.omegice.launcher.ui.panels.pages.content.Home$StepInfo
-fr/blueice/omegice/launcher/ui/panels/pages/App.java
- fr.blueice.omegice.launcher.ui.panels.pages.App
+fr/blueice/omegice/launcher/Main.java
+ fr.blueice.omegice.launcher.Main
+fr/blueice/omegice/launcher/ui/panel/IPanel.java
+ fr.blueice.omegice.launcher.ui.panel.IPanel
 fr/blueice/omegice/launcher/ui/panel/ITakePLace.java
  fr.blueice.omegice.launcher.ui.panel.ITakePLace
 fr/blueice/omegice/launcher/ui/panels/pages/content/Settings.java
@@ -24,7 +22,9 @@ fr/blueice/omegice/launcher/ui/panels/pages/Login.java
  fr.blueice.omegice.launcher.ui.panels.pages.Login
 fr/blueice/omegice/launcher/ui/panel/Panel.java
  fr.blueice.omegice.launcher.ui.panel.Panel
-fr/blueice/omegice/launcher/Main.java
- fr.blueice.omegice.launcher.Main
-fr/blueice/omegice/launcher/ui/panel/IPanel.java
- fr.blueice.omegice.launcher.ui.panel.IPanel
+fr/blueice/omegice/launcher/ui/panels/pages/App.java
+ fr.blueice.omegice.launcher.ui.panels.pages.App
+fr/blueice/omegice/launcher/ui/panels/pages/content/Home.java
+ fr.blueice.omegice.launcher.ui.panels.pages.content.Home
+ fr.blueice.omegice.launcher.ui.panels.pages.content.Home$1
+ fr.blueice.omegice.launcher.ui.panels.pages.content.Home$StepInfo

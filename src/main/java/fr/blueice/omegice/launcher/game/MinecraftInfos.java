@@ -19,6 +19,4 @@ public class MinecraftInfos {
             "20210115.111550"
     );
 
-    public static final String CURSE_MODS_LIST_URL = "http://localhost/mods_list.json";
-    public static final String MODS_LIST_URL = "http://localhost/mods_list.json";
 }

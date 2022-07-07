@@ -146,14 +146,9 @@ public class Home extends ContentPanel {
             final UpdaterOptions options = new UpdaterOptions.UpdaterOptionsBuilder()
                     .build();
 
-            List<CurseFileInfo> curseMods = CurseFileInfo.getFilesFromJson(MinecraftInfos.CURSE_MODS_LIST_URL);
-            List<Mod> mods = Mod.getModsFromJson(MinecraftInfos.MODS_LIST_URL);
-
             final AbstractForgeVersion forge = new ForgeVersionBuilder(MinecraftInfos.FORGE_VERSION_TYPE)
                     .withForgeVersion(MinecraftInfos.FORGE_VERSION)
-                    .withCurseMods(curseMods)
-                    .withCurseModPack(new CurseModPackInfo("https://www.curseforge.com/minecraft/modpacks/omegice/files/3862618", true , null))
-                    .withMods(mods)
+                    .withCurseModPack(new CurseModPackInfo("https://omegice2.000webhostapp.com", true))
                     .build();
 
             final FlowUpdater updater = new FlowUpdater.FlowUpdaterBuilder()
@@ -175,7 +170,7 @@ public class Home extends ContentPanel {
 
     public void startGame(String gameVersion) {
         GameInfos infos = new GameInfos(
-                "Omegice",
+                "omegice",
                 true,
                 new GameVersion(gameVersion, MinecraftInfos.OLL_GAME_TYPE.setNFVD(MinecraftInfos.OLL_FORGE_DISCRIMINATOR)),
                 new GameTweak[]{}
