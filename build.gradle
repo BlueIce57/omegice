@@ -1,0 +1,47 @@
+plugins {
+    id 'idea'
+    id 'com.github.johnrengelman.shadow' version '7.0.0'
+    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.9'
+}
+
+apply plugin: 'org.openjfx.javafxplugin'
+
+group 'fr.blueice.omegice.launcher'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+    maven {
+        url = 'https://jitpack.io/'
+        name = 'JitPack'
+    }
+    maven {
+        url 'https://litarvan.github.io/maven'
+    }
+}
+
+dependencies {
+    implementation 'fr.litarvan:openauth:1+'
+    implementation 'de.jensd:fontawesomefx-fontawesome:4+'
+
+    implementation 'fr.flowarg:flowupdater:1.5+'
+    implementation 'fr.flowarg:openlauncherlib:3+'
+
+    implementation 'com.github.goxr3plus:FX-BorderlessScene:4+'
+    implementation 'com.github.oshi:oshi-core:5+'
+}
+
+javafx {
+    version = 12
+    modules = ['javafx.controls', 'javafx.fxml', 'javafx.web', 'javafx.swing']
+}
+
+application {
+    getMainClass().set('fr.blueice.omegice.launcher.Main')
+}
+
+compileJava {
+    options.encoding = "UTF-8"
+}
