@@ -8,9 +8,9 @@ import fr.blueice.omegice.launcher.ui.PanelManager;
 import fr.flowarg.flowupdater.FlowUpdater;
 import fr.flowarg.flowupdater.download.IProgressCallback;
 import fr.flowarg.flowupdater.download.Step;
-import fr.flowarg.flowupdater.download.json.CurseFileInfo;
 import fr.flowarg.flowupdater.download.json.CurseModPackInfo;
-import fr.flowarg.flowupdater.download.json.Mod;
+import fr.flowarg.flowupdater.download.json.OptiFineInfo;
+import fr.flowarg.flowupdater.utils.ModFileDeleter;
 import fr.flowarg.flowupdater.utils.UpdaterOptions;
 import fr.flowarg.flowupdater.versions.AbstractForgeVersion;
 import fr.flowarg.flowupdater.versions.ForgeVersionBuilder;
@@ -30,7 +30,6 @@ import javafx.scene.layout.RowConstraints;
 
 import java.nio.file.Path;
 import java.text.DecimalFormat;
-import java.util.List;
 
 public class Home extends ContentPanel {
     private final Saver saver = Launcher.getInstance().getSaver();
@@ -141,19 +140,21 @@ public class Home extends ContentPanel {
         try {
             final VanillaVersion vanillaVersion = new VanillaVersion.VanillaVersionBuilder()
                     .withName(MinecraftInfos.GAME_VERSION)
-                    .withVersionType(MinecraftInfos.VERSION_TYPE)
+                    .withSnapshot(Boolean.parseBoolean(MinecraftInfos.GAME_VERSION))
                     .build();
             final UpdaterOptions options = new UpdaterOptions.UpdaterOptionsBuilder()
                     .build();
 
-            final AbstractForgeVersion forge = new ForgeVersionBuilder(MinecraftInfos.FORGE_VERSION_TYPE)
-                    .withForgeVersion(MinecraftInfos.FORGE_VERSION)
-                    .withCurseModPack(new CurseModPackInfo("https://omegice2.000webhostapp.com", true))
+            final AbstractForgeVersion forgeVersion = new ForgeVersionBuilder(ForgeVersionBuilder.ForgeVersionType.NEW)
+                    .withForgeVersion("36.2.2")
+                    .withCurseModPack(new CurseModPackInfo(640758, 3862618, false))
+                    .withOptiFine(new OptiFineInfo("1.16.3_HD_U_G3", false)) // installing OptiFine for 1.16.3, false = not a preview
+                    .withFileDeleter(new ModFileDeleter(true, "jei.jar")) // delete bad mods, don't remove the file jei.jar if it's present in the mods' dir.
                     .build();
 
             final FlowUpdater updater = new FlowUpdater.FlowUpdaterBuilder()
                     .withVanillaVersion(vanillaVersion)
-                    .withForgeVersion(forge)
+                    .withModLoaderVersion(forgeVersion)
                     .withLogger(Launcher.getInstance().getLogger())
                     .withProgressCallback(callback)
                     .withUpdaterOptions(options)
@@ -237,6 +238,9 @@ public class Home extends ContentPanel {
         MODS("Téléchargement des mods..."),
         EXTERNAL_FILES("Téléchargement des fichier externes..."),
         POST_EXECUTIONS("Exécution post-installation..."),
+        MOD_LOADER("Chargement des mods"),
+        MOD_PACK("Installation du mod pack"),
+        INTEGRATION("Integration"),
         END("Finit !");
         String details;
 
