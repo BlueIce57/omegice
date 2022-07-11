@@ -14,3 +14,4 @@ public abstract class ContentPanel extends Panel {
         transition.play();
     }
 }
+

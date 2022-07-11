@@ -1,0 +1,27 @@
+.mods-layout {
+    -fx-background-color: rgb(50, 50, 50);
+}
+
+.mods-title {
+    -fx-text-fill: rgb(250, 250, 250);
+}
+
+.content-pane,  {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .scroll-pane .viewport {
+    -fx-background-color: transparent;
+}
+
+.mods-btn {
+    -fx-background-radius: 50px;
+    -fx-font-size: 15px;
+    -fx-text-fill: #F5F5F5;
+    -fx-background-color: #85AE51;
+}
+
+.mods-labels {
+    -fx-text-fill: rgb(20, 25, 25);
+    -fx-font-size: 15px;
+}

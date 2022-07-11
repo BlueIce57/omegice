@@ -6,7 +6,6 @@ import fr.theshark34.openlauncherlib.minecraft.GameType;
 
 public class MinecraftInfos {
     public static final String GAME_VERSION = "1.16.5";
-
     public static final ForgeVersionBuilder.ForgeVersionType FORGE_VERSION_TYPE = ForgeVersionBuilder.ForgeVersionType.NEW;
     public static final String FORGE_VERSION = "1.16.5-36.2.2";
     public static final String OPTIFINE_VERSION = "1.16.5_HD_U_G8";
@@ -18,4 +17,6 @@ public class MinecraftInfos {
             "20210115.111550"
     );
 
+    public static final String CURSE_MODS_LIST_URL = "https://omegice2.000webhostapp.com/Mods.json";
+    public static final String MODS_LIST_URL = "https://omegice2.000webhostapp.com/Mods.json";
 }

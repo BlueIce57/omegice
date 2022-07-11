@@ -7,6 +7,7 @@ import fr.blueice.omegice.launcher.ui.PanelManager;
 import fr.blueice.omegice.launcher.ui.panel.Panel;
 import fr.blueice.omegice.launcher.ui.panels.pages.content.ContentPanel;
 import fr.blueice.omegice.launcher.ui.panels.pages.content.Home;
+import fr.blueice.omegice.launcher.ui.panels.pages.content.Mods;
 import fr.blueice.omegice.launcher.ui.panels.pages.content.Settings;
 import fr.theshark34.openlauncherlib.util.Saver;
 import javafx.geometry.HPos;
@@ -29,7 +30,7 @@ public class App extends Panel {
     Node activeLink = null;
     ContentPanel currentPage = null;
 
-    Button homeBtn, settingsBtn;
+    Button homeBtn, settingsBtn, modsBtn;
 
     Saver saver = Launcher.getInstance().getSaver();
 
@@ -108,7 +109,15 @@ public class App extends Panel {
         settingsBtn.setTranslateY(130d);
         settingsBtn.setOnMouseClicked(e -> setPage(new Settings(), settingsBtn));
 
-        sidemenu.getChildren().addAll(homeBtn, settingsBtn);
+        modsBtn = new Button ("Mods");
+        modsBtn.getStyleClass().add("sidemenu-nav-btn");
+        modsBtn.setGraphic(new FontAwesomeIconView(FontAwesomeIcon.GEAR));
+        setCanTakeAllSize(modsBtn);
+        setTop(modsBtn);
+        modsBtn.setTranslateY(170d);
+        modsBtn.setOnMouseClicked(e -> setPage(new Mods(), modsBtn));
+
+        sidemenu.getChildren().addAll(homeBtn, settingsBtn, modsBtn);
 
         if (Launcher.getInstance().getAuthInfos() != null) {
             // Pseudo + avatar

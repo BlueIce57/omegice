@@ -147,9 +147,6 @@ public class Home extends ContentPanel {
 
             final AbstractForgeVersion forgeVersion = new ForgeVersionBuilder(ForgeVersionBuilder.ForgeVersionType.NEW)
                     .withForgeVersion("36.2.2")
-                    .withCurseModPack(new CurseModPackInfo(640758, 3862618, false))
-                    .withOptiFine(new OptiFineInfo("1.16.3_HD_U_G3", false)) // installing OptiFine for 1.16.3, false = not a preview
-                    .withFileDeleter(new ModFileDeleter(true, "jei.jar")) // delete bad mods, don't remove the file jei.jar if it's present in the mods' dir.
                     .build();
 
             final FlowUpdater updater = new FlowUpdater.FlowUpdaterBuilder()
