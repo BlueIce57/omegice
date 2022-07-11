@@ -17,6 +17,6 @@ public class MinecraftInfos {
             "20210115.111550"
     );
 
-    public static final String CURSE_MODS_LIST_URL = "https://omegice2.000webhostapp.com/Mods.json";
-    public static final String MODS_LIST_URL = "https://omegice2.000webhostapp.com/Mods.json";
+    public static final String CURSE_MODS_LIST_URL = "https://dev-omegice.pantheonsite.io/Mods.json";
+    public static final String MODS_LIST_URL = "https://dev-omegice.pantheonsite.io/Mods.json";
 }

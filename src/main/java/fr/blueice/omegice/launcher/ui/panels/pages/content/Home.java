@@ -8,6 +8,7 @@ import fr.blueice.omegice.launcher.ui.PanelManager;
 import fr.flowarg.flowupdater.FlowUpdater;
 import fr.flowarg.flowupdater.download.IProgressCallback;
 import fr.flowarg.flowupdater.download.Step;
+import fr.flowarg.flowupdater.download.json.CurseFileInfo;
 import fr.flowarg.flowupdater.download.json.CurseModPackInfo;
 import fr.flowarg.flowupdater.download.json.OptiFineInfo;
 import fr.flowarg.flowupdater.utils.ModFileDeleter;
@@ -147,6 +148,7 @@ public class Home extends ContentPanel {
 
             final AbstractForgeVersion forgeVersion = new ForgeVersionBuilder(ForgeVersionBuilder.ForgeVersionType.NEW)
                     .withForgeVersion("36.2.2")
+                    .withCurseMods(CurseFileInfo.getFilesFromJson("https://dev-omegice.pantheonsite.io/Mods.json"))
                     .build();
 
             final FlowUpdater updater = new FlowUpdater.FlowUpdaterBuilder()
